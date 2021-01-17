@@ -2,14 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  console.log("state: ");
+  console.log("credits state: " + state);
   return { credits: state.credits };
 };
 
 const ConnectedList = ({ credits }) => (
   <ul>
     {credits.map(el => (
-      <li key={el.id}>{el.description} - {el.amount}</li>
+      <li key={el.id}>{el.description} - {el.amount} - {el.date}</li>
     ))}
   </ul>
 );
