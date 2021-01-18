@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   render() {
-    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
+    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>);
     const LogInComponent = () => (<Login user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
@@ -41,18 +41,19 @@ class App extends Component {
 
     return (
       <Fragment>
-      <Menu />
-      <header className="App-header">
       <Router>
+      <Menu />
         <Switch>
+        <header className="App-header">
           <Route exact path="/" render={HomeComponent} />
           <Route exact path="/credits" component={Credits} />
           <Route exact path="/debits" component={Debits} />
           <Route exact path="/login" render={LogInComponent} />
           <Route exact path="/userProfile" render={UserProfileComponent} />
+          </header>
         </Switch>
       </Router>
-      </header>
+
       </Fragment>
     );
   }

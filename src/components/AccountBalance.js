@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  console.log("state: " + state);
   return { accountBalance: state.accountBalance };
 };
 
 const ConnectedBalance = ({ accountBalance }) => (
 
-    <div>
-      Balance: {accountBalance}
-    </div>
+    <h3>
+      Balance: {"$" + parseFloat(accountBalance).toLocaleString('en')}
+    </h3>
 
   )
 

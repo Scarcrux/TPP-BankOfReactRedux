@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store/index";
 import App from "./App";
-import "bootswatch/dist/cerulean/bootstrap.min.css";
+import "bootswatch/dist/cyborg/bootstrap.min.css";
 
 render(
   <Provider store={store}>
