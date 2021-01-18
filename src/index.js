@@ -6,10 +6,13 @@ import { Provider } from "react-redux";
 import store from "./redux/store/index";
 import App from "./App";
 import "bootswatch/dist/cyborg/bootstrap.min.css";
+import {BrowserRouter as Router} from 'react-router-dom';
 
 render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
