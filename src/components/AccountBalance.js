@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { connect } from "react-redux";
 
-class AccountBalance extends Component {
-  render() {
-    return (
-        <div>
-          Balance: {this.props.accountBalance}
-        </div>
-    );
-  }
-}
+const mapStateToProps = state => {
+  return { accountBalance: state.accountBalance };
+};
+
+const ConnectedBalance = ({ accountBalance }) => (
+
+    <h3>
+      Balance: {"$" + parseFloat(accountBalance).toLocaleString('en')}
+    </h3>
+
+  )
+
+const AccountBalance = connect(mapStateToProps)(ConnectedBalance);
 
 export default AccountBalance;

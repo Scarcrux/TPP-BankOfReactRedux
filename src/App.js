@@ -1,65 +1,29 @@
 import './App.css';
-import React, {Component} from 'react';
+import React, { Component, Fragment } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
+import Debits from './components/Debits';
+import Credits from './components/Credits'
+import Menu from './components/Menu'
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import { connect } from "react-redux";
-import { getCredits } from "./redux/actions/index";
+import { getBalance, getCredits, getDebits } from "./redux/actions/index";
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      accountBalance: 14568.27,
       currentUser: {
         userName: 'bob_loblaw',
         memberSince: '08/23/99',
-      },
-      error: null,
-      isLoaded: false,
-      creditsTotal: 0,
-      debitsTotal: 0,
-      credits: [],
-      debits: [],
+      }
     }
   }
 
   componentDidMount() {
-    Promise.all([
-      fetch(`https://moj-api.herokuapp.com/credits`).then(data => data.json()),
-      fetch(`https://moj-api.herokuapp.com/debits`).then(data => data.json())
-      ])
-      .then(
-        (data) => {
-          this.setState({
-            credits: data[0],
-            debits: data[1],
-            isLoaded: true
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-      .then((data) => {
-        let credits = this.state.credits.reduce((acc, item) => acc + item.amount, 0)
-        console.log(credits);
-        let debits = this.state.debits.reduce((acc, item) => acc + item.amount, 0)
-        console.log(debits)
-        this.setState({
-          creditsTotal: credits,
-          debitsTotal: debits,
-          accountBalance: credits - debits})
-        console.log(this.state.accountBalance)
-      }
-      )
-      .then((data) => {
-        this.props.getCredits();
-      })
+      this.props.getDebits();
+      this.props.getCredits();
   }
 
   mockLogIn = (logInInfo) => {
@@ -69,28 +33,37 @@ class App extends Component {
   }
 
   render() {
-    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
+    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>);
     const LogInComponent = () => (<Login user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
   );
 
     return (
+      <Fragment>
       <Router>
+      <Menu />
         <Switch>
-          <Route exact path="/" render={HomeComponent}/>
-          <Route exact path="/login" render={LogInComponent}/>
-          <Route exact path="/userProfile" render={UserProfileComponent}/>
+        <header className="App-header">
+          <Route exact path="/" render={HomeComponent} />
+          <Route exact path="/credits" component={Credits} />
+          <Route exact path="/debits" component={Debits} />
+          <Route exact path="/login" render={LogInComponent} />
+          <Route exact path="/userProfile" render={UserProfileComponent} />
+          </header>
         </Switch>
       </Router>
+
+      </Fragment>
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    credits: state.credits
+    credits: state.credits,
+    debits: state.debits
   };
 }
 
-export default connect(mapStateToProps, { getCredits })(App);
+export default connect(mapStateToProps, { getBalance, getCredits, getDebits })(App);

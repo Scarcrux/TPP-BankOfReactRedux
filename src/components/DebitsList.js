@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { Table } from 'reactstrap';
 
 const mapStateToProps = state => {
-  return { credits: state.credits };
+  return { debits: state.debits };
 };
 
-const ConnectedList = ({ credits }) => (
+const ConnectedList = ({ debits }) => (
   <Table borderless>
     <thead>
       <tr>
@@ -15,7 +15,7 @@ const ConnectedList = ({ credits }) => (
         <th>Amount</th>
       </tr>
     </thead>
-    {credits.map(el => (
+    {debits.map(el => (
       <tr key={el.id}>
         <td>{new Date(el.date).toLocaleDateString()}</td>
         <td>{el.description}</td>
@@ -26,6 +26,6 @@ const ConnectedList = ({ credits }) => (
 );
 
 
-const CreditsList = connect(mapStateToProps)(ConnectedList);
+const DebitsList = connect(mapStateToProps)(ConnectedList);
 
-export default CreditsList;
+export default DebitsList;

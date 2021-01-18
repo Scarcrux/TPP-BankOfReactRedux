@@ -1,4 +1,4 @@
-import { ADD_CREDIT, ADD_DEBIT } from "../constants/action-types";
+import { ADD_CREDIT, ADD_DEBIT, GET_BALANCE, LOAD_CREDITS, LOAD_DEBITS } from "../constants/action-types";
 
 export function addCredit(payload) {
   return { type: ADD_CREDIT, payload };
@@ -6,6 +6,12 @@ export function addCredit(payload) {
 
 export function addDebit(payload) {
   return { type: ADD_DEBIT, payload };
+}
+
+export function getBalance() {
+  return function(dispatch) {
+  return dispatch({ type: "LOAD_BALANCE"});
+  }
 }
 
 export function getCredits() {
