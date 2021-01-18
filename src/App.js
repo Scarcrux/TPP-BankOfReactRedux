@@ -40,21 +40,18 @@ class App extends Component {
   );
 
     return (
-      <Fragment>
       <Router>
       <Menu />
+      <header className="App-header">
         <Switch>
-        <header className="App-header">
-          <Route exact path="/" render={HomeComponent} />
+          <Route exact path="/TPP-BankOfReactRedux" render={HomeComponent} />
           <Route exact path="/credits" component={Credits} />
           <Route exact path="/debits" component={Debits} />
           <Route exact path="/login" render={LogInComponent} />
           <Route exact path="/userProfile" render={UserProfileComponent} />
-          </header>
         </Switch>
+        </header>
       </Router>
-
-      </Fragment>
     );
   }
 }

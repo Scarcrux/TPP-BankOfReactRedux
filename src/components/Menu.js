@@ -23,7 +23,7 @@ const Menu = (props) => {
   return (
     <div>
       <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <NavbarBrand href={"/"}>Bank of React</NavbarBrand>
+        <NavbarBrand href={"/TPP-BankOfReactRedux"}>Bank of React</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
