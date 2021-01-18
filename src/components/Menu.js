@@ -28,10 +28,10 @@ const Menu = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink tag={NavvLink} to="/credits">Credits</NavLink>
+              <NavLink tag={NavvLink} to="/TPP-BankOfReactRedux/credits">Credits</NavLink>
             </NavItem>
             <NavItem>
-            <NavLink tag={NavvLink} to="/debits">Debits</NavLink>
+            <NavLink tag={NavvLink} to="/TPP-BankOfReactRedux/debits">Debits</NavLink>
             </NavItem>
           </Nav>
           <NavLink href="https://www.techtalentpipeline.nyc/">TTP</NavLink>
