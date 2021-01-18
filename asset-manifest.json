@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/TPP-BankOfReactRedux/static/css/main.a6f88f9c.chunk.css",
+    "main.js": "/TPP-BankOfReactRedux/static/js/main.c1e5c8a4.chunk.js",
+    "main.js.map": "/TPP-BankOfReactRedux/static/js/main.c1e5c8a4.chunk.js.map",
+    "runtime-main.js": "/TPP-BankOfReactRedux/static/js/runtime-main.aef2e605.js",
+    "runtime-main.js.map": "/TPP-BankOfReactRedux/static/js/runtime-main.aef2e605.js.map",
+    "static/css/2.66fb0486.chunk.css": "/TPP-BankOfReactRedux/static/css/2.66fb0486.chunk.css",
+    "static/js/2.55d97561.chunk.js": "/TPP-BankOfReactRedux/static/js/2.55d97561.chunk.js",
+    "static/js/2.55d97561.chunk.js.map": "/TPP-BankOfReactRedux/static/js/2.55d97561.chunk.js.map",
+    "static/js/3.16d0c620.chunk.js": "/TPP-BankOfReactRedux/static/js/3.16d0c620.chunk.js",
+    "static/js/3.16d0c620.chunk.js.map": "/TPP-BankOfReactRedux/static/js/3.16d0c620.chunk.js.map",
+    "index.html": "/TPP-BankOfReactRedux/index.html",
+    "static/css/2.66fb0486.chunk.css.map": "/TPP-BankOfReactRedux/static/css/2.66fb0486.chunk.css.map",
+    "static/css/main.a6f88f9c.chunk.css.map": "/TPP-BankOfReactRedux/static/css/main.a6f88f9c.chunk.css.map",
+    "static/js/2.55d97561.chunk.js.LICENSE.txt": "/TPP-BankOfReactRedux/static/js/2.55d97561.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aef2e605.js",
+    "static/css/2.66fb0486.chunk.css",
+    "static/js/2.55d97561.chunk.js",
+    "static/css/main.a6f88f9c.chunk.css",
+    "static/js/main.c1e5c8a4.chunk.js"
+  ]
+}
