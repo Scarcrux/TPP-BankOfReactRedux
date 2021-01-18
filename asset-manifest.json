@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TPP-BankOfReactRedux/static/css/main.a6f88f9c.chunk.css",
-    "main.js": "/TPP-BankOfReactRedux/static/js/main.c1e5c8a4.chunk.js",
-    "main.js.map": "/TPP-BankOfReactRedux/static/js/main.c1e5c8a4.chunk.js.map",
+    "main.js": "/TPP-BankOfReactRedux/static/js/main.3dc7fadf.chunk.js",
+    "main.js.map": "/TPP-BankOfReactRedux/static/js/main.3dc7fadf.chunk.js.map",
     "runtime-main.js": "/TPP-BankOfReactRedux/static/js/runtime-main.aef2e605.js",
     "runtime-main.js.map": "/TPP-BankOfReactRedux/static/js/runtime-main.aef2e605.js.map",
     "static/css/2.66fb0486.chunk.css": "/TPP-BankOfReactRedux/static/css/2.66fb0486.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.66fb0486.chunk.css",
     "static/js/2.55d97561.chunk.js",
     "static/css/main.a6f88f9c.chunk.css",
-    "static/js/main.c1e5c8a4.chunk.js"
+    "static/js/main.3dc7fadf.chunk.js"
   ]
 }
